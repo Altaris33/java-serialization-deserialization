@@ -1,7 +1,11 @@
 package fr.captain.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public class Book implements Serializable {
@@ -10,6 +14,8 @@ public class Book implements Serializable {
     private String author;
     private List<String> parts;
     private LiteratureGenre genre;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
 
     public Book() {
